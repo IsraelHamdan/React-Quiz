@@ -9,14 +9,10 @@ const STAGES = ["Start", "Playing", "End"];
 const initalState = {
   gameStage: STAGES[0],
   questions,
+  currentQuestion: 0,
 };
 
 const quizReducer = (state, action) => {
-  console.log(
-    "🚀 ~ file: quiz.jsx:15 ~ quizReducer ~ state, action:",
-    state,
-    action
-  );
   switch (action.type) {
     case "CHANGE_STATE":
       return {
