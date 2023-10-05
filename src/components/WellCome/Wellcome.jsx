@@ -3,14 +3,14 @@
 // React Hooks
 import { useContext } from "react";
 
-import { QuizContex } from "../../context/quiz";
+import { QuizContext } from "../../context/quiz";
 
 //estilização e arquivos estáticos
 import img from "../../assets/quiz.svg";
 import "./Wellcome.css";
 
 const Wellcome = () => {
-  const [quizState, dispatch] = useContext(QuizContex);
+  const [quizState, dispatch] = useContext(QuizContext);
   return (
     <div className="wellcome">
       <h2 className="wellcome-title">Seja bem-vindo</h2>
