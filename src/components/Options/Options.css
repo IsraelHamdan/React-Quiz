@@ -1,0 +1,19 @@
+.option {
+  background-color: #3c0e70;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.option:hover {
+  opacity: 1;
+}
+
+#questions-options,
+.options-tag {
+  margin-bottom: 0;
+}
