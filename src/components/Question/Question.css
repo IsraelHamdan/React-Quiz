@@ -1,0 +1,20 @@
+.question {
+  background-color: #8435de;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 500px;
+}
+
+.question-contador,
+.question-options {
+  margin-bottom: 1rem;
+}
+
+.question-title {
+  margin-bottom: 2rem;
+}
+
+.question-btn {
+  border: 2px solid #fff;
+  margin: 1rem;
+}

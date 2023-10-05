@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { QuizContext } from "../../context/quiz";
 
@@ -15,7 +14,11 @@ const Question = () => {
       </p>
       <h2 className="question-title">{currentQuestion.question}</h2>
       <p className="questions-options">Options</p>
-      <button className="questions-btn btn">Proxima</button>
+      <button
+        onClick={() => dispatch({ type: "CHANGE_QUESTION" })}
+        className="questions-btn btn">
+        Proxima
+      </button>
     </div>
   );
 };
