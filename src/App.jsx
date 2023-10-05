@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
+
 // React Hooks & context
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { QuizContext } from "./context/quiz";
 
 // Componentes
@@ -10,6 +12,10 @@ import "./App.css";
 
 function App() {
   const [quizState, dispatch] = useContext(QuizContext);
+
+  useEffect(() => {
+    //embaralhar perguntas
+  });
 
   return (
     <div className="App">
