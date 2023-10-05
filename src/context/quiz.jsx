@@ -1,7 +1,7 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable react/prop-types */
 import { createContext, useReducer } from "react";
-import questions from "../data/questions.jsx";
+import questions from "../data/questions.js";
 
 export const QuizContext = createContext();
 
