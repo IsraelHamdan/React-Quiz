@@ -8,6 +8,9 @@ import "./Question.css";
 const Question = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const currentQuestion = quizState.questions[quizState.currentQuestion];
+  const onSelectOption = () => {
+    console.log("teste");
+  };
 
   return (
     <div className="question">
@@ -17,14 +20,22 @@ const Question = () => {
       <h2 className="question-title">{currentQuestion.question}</h2>
       <div id="questions-options">
         {currentQuestion.options.map((option) => (
-          <Options key={option} option={option} />
+          <Options
+            key={option}
+            option={option}
+            answer={currentQuestion.answer}
+            selectOption={() => onSelectOption()}
+          />
         ))}
       </div>
-      <button
-        onClick={() => dispatch({ type: "CHANGE_QUESTION" })}
-        className="questions-btn btn">
-        Proxima
-      </button>
+      {quizState.answerSelected && (
+        <button
+          onClick={() => dispatch({ type: "CHANGE_QUESTION" })}
+          className="questions-btn btn"
+          answer={currentQuestion.answer}>
+          Proxima
+        </button>
+      )}
     </div>
   );
 };
