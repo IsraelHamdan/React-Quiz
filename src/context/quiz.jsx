@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 /* eslint-disable react/prop-types */
 import { createContext, useReducer } from "react";
 import questions from "../data/questions.jsx";
@@ -19,6 +20,15 @@ const quizReducer = (state, action) => {
         ...state,
         gameStage: STAGES[1],
       };
+    case "REORDER_QUESTIONS":
+      const reorderedQuestions = state.questions.sort(() => {
+        return Math.random() - 0.5;
+      });
+      return {
+        ...state,
+        questions: reorderedQuestions,
+      };
+
     default:
       return state;
   }

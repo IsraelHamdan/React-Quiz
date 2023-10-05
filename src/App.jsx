@@ -8,14 +8,15 @@ import { QuizContext } from "./context/quiz";
 import Wellcome from "./components/WellCome/Wellcome";
 import Questions from "./components/Question/Question";
 
+// estilização
 import "./App.css";
 
-function App() {
+export default function App() {
   const [quizState, dispatch] = useContext(QuizContext);
 
   useEffect(() => {
-    //embaralhar perguntas
-  });
+    dispatch({ type: "REORDER_QUESTIONS" });
+  }, []);
 
   return (
     <div className="App">
@@ -25,5 +26,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
