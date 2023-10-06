@@ -45,6 +45,9 @@ const quizReducer = (state, action) => {
       };
     case "NEW_GAME":
       return initalState;
+    case "CHECKED_ANSWERE":
+      console.log(action);
+      break;
     default:
       return state;
   }

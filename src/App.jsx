@@ -11,9 +11,13 @@ import GameOver from "./components/GameOver/GameOver";
 
 // estilização
 import "./App.css";
+import Spinner from "./components/Spinner/Spinner";
 
 export default function App() {
   const [quizState, dispatch] = useContext(QuizContext);
+  if (!quizState) {
+    <Spinner />;
+  }
   useEffect(() => {
     dispatch({ type: "REORDER_QUESTIONS" });
   }, []);

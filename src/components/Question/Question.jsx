@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useContext } from "react";
 import { QuizContext } from "../../context/quiz";
 
@@ -8,8 +9,11 @@ import "./Question.css";
 const Question = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const currentQuestion = quizState.questions[quizState.currentQuestion];
-  const onSelectOption = () => {
-    console.log("teste");
+  const onSelectOption = (option) => {
+    dispatch({
+      type: "CHECKED_ANSWERE",
+      payload: { answere: currentQuestion.option, option },
+    });
   };
 
   return (
@@ -24,7 +28,7 @@ const Question = () => {
             key={option}
             option={option}
             answer={currentQuestion.answer}
-            selectOption={() => onSelectOption()}
+            selectOption={() => onSelectOption(option)}
           />
         ))}
       </div>
