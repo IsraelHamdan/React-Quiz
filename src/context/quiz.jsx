@@ -3,8 +3,6 @@
 import { createContext, useReducer } from "react";
 import questions from "../data/questions.js";
 
-export const QuizContext = createContext();
-
 const STAGES = ["Start", "Playing", "End"];
 
 const initalState = {
@@ -45,13 +43,15 @@ const quizReducer = (state, action) => {
       };
     case "NEW_GAME":
       return initalState;
-    case "CHECKED_ANSWERE":
+    case "CHECKED_ANSWER":
       console.log(action);
       break;
     default:
       return state;
   }
 };
+
+export const QuizContext = createContext();
 
 export const QuizProvider = ({ children }) => {
   const value = useReducer(quizReducer, initalState);

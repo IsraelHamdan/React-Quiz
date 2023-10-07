@@ -5,16 +5,17 @@ import { useContext, useEffect } from "react";
 import { QuizContext } from "./context/quiz";
 
 // Componentes
-import Wellcome from "./components/WellCome/Wellcome";
-import Questions from "./components/Question/Question";
+import Spinner from "./components/Spinner/Spinner";
+import Welcome from "./components/Welcome/Welcome";
+import Question from "./components/Question/Question";
 import GameOver from "./components/GameOver/GameOver";
 
 // estilização
 import "./App.css";
-import Spinner from "./components/Spinner/Spinner";
 
 export default function App() {
   const [quizState, dispatch] = useContext(QuizContext);
+
   if (!quizState) {
     <Spinner />;
   }
@@ -25,8 +26,8 @@ export default function App() {
   return (
     <div className="App">
       <h1>Quiz de Progrmação</h1>
-      {quizState.gameStage === "Start" && <Wellcome />}
-      {quizState.gameStage === "Playing" && <Questions />}
+      {quizState.gameStage === "Start" && <Welcome />}
+      {quizState.gameStage === "Playing" && <Question />}
       {quizState.gameStage === "End" && <GameOver />}
     </div>
   );

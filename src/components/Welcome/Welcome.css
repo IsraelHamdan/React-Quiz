@@ -1,17 +1,17 @@
-.wellcome {
+.Welcome {
   text-align: center;
   max-width: 500px;
 }
 
-.wellcome-title,
-.wellcome-p {
+.Welcome-title,
+.Welcome-p {
   margin-bottom: 1rem;
 }
 
-.wellcome-p {
+.Welcome-p {
   color: #8485de;
 }
 
-.wellcome-img {
+.Welcome-img {
   margin-top: 2rem;
 }
